@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MovieCard from "./MovieCard";
 import "../styles.css";
 
-export default function MoviesGrid() {
-  const [movies, setMovies] = useState([]);
+export default function MoviesGrid({ movies, watchlist, toggleWatchList }) {
   const [searchMovie, setSearchMovie] = useState("");
   const [genreFilter, setGenreFilter] = useState("");
-  const [minRating, setMinRating] = useState("");
-
-  useEffect(() => {
-    fetch("movies.json")
-      .then((response) => response.json())
-      .then((data) => setMovies(data));
-  }, []);
+  const [minRating, setMinRating] = useState(8);
 
   // Filter movies by title, genre, and rating safely
   const filteredMovies = movies.filter((movie) => {
@@ -87,7 +80,12 @@ export default function MoviesGrid() {
       <div className="movies-grid">
         {filteredMovies.length > 0 ? (
           filteredMovies.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
+            <MovieCard
+              movie={movie}
+              key={movie.id}
+              toggleWatchList={toggleWatchList}
+              isWatchListed={watchlist.includes(movie.id)}
+            ></MovieCard>
           ))
         ) : (
           <p> Search criteria doesnt match.</p>
