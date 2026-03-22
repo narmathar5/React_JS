@@ -87,7 +87,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  text-align: center;
+  text-align: centre;
 }
 
 .movie-card-title {
@@ -121,7 +121,6 @@ body {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-
 
 /* Footer Styles */
 .my-footer {

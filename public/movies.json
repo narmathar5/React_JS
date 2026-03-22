@@ -134,9 +134,16 @@
   },
   {
     "id": 20,
-    "title": "Guardians of Twilight",
+    "title_error_handler_testing": "Guardians of Twilight",
     "image": "20.jpg",
     "genre": "horror",
     "rating": "7.4"
+  },
+  {
+    "id": 21,
+    "title": "Default",
+    "image": "default.jpg",
+    "genre": "default",
+    "rating": "0.0"
   }
 ]
